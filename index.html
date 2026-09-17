@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Almarai:wght@300;400;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: oklch(0.16 0.03 250); }
+  a { color: oklch(0.97 0.006 90); text-decoration: none; }
+  a:hover { color: oklch(0.75 0.13 250); }
+  ::selection { background: oklch(0.55 0.16 252); color: oklch(0.16 0.03 250); }
+
+  [dir="rtl"] { font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif; }
+  [dir="rtl"] *, [dir="rtl"] { letter-spacing: normal !important; text-transform: none !important; }
+  [dir="rtl"] div, [dir="rtl"] span, [dir="rtl"] p, [dir="rtl"] a, [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3 { font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif !important; }
+  [dir="rtl"] h1 { font-weight: 300 !important; line-height: 1.42 !important; }
+  [dir="rtl"] h2 { font-weight: 300 !important; line-height: 1.46 !important; }
+  [dir="rtl"] h3 { font-weight: 500 !important; line-height: 1.55 !important; }
+  [dir="rtl"] p { font-weight: 400; line-height: 1.95 !important; }
+  [dir="rtl"] [style*="IBM Plex Mono"] { font-weight: 500 !important; }
+  [dir="rtl"] [style*="Newsreader"]:not(h1):not(h2):not(h3) { font-weight: 500 !important; }
+</style>
+</helmet>
+<div dir="{{ dir }}" style="min-height: 100vh; background: oklch(0.16 0.03 250); color: oklch(0.97 0.006 90); font-family: Archivo, 'IBM Plex Sans Arabic', system-ui, sans-serif; -webkit-font-smoothing: antialiased; display: flex; flex-direction: column;">
+
+  <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 24px; padding: 20px clamp(20px, 5vw, 64px); border-bottom: 1px solid rgba(255,255,255,0.1);">
+    <div style="display: flex; align-items: center; gap: 18px;">
+      <img src="./assets/tamo-haus-logo-white.png" alt="Tamo Haus" style="height: 26px; width: auto; display: block;" />
+      <span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.5);">{{ t.forClient }}</span>
+      <div style="background: oklch(0.99 0.004 90); padding: 6px 9px;"><img src="./assets/st-mark.png" alt="Special Touch Co." style="height: 20px; width: auto; display: block;" /></div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 18px;">
+      <span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.4);">{{ t.stamp }}</span>
+    </div>
+  </div>
+
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; padding: clamp(48px, 8vw, 92px) clamp(20px, 5vw, 64px) clamp(32px, 5vw, 56px); max-width: 1320px; width: 100%; margin: 0 auto; box-sizing: border-box;">
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(28px, 4vw, 72px); align-items: end; margin-bottom: clamp(44px, 6vw, 80px);">
+      <div>
+        <div style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11.5px; letter-spacing: 0.2em; text-transform: uppercase; color: oklch(0.75 0.13 250); margin-bottom: 26px;">{{ t.eyebrow }}</div>
+        <h1 style="font-family: Newsreader, 'Almarai', serif; font-weight: 300; font-size: clamp(36px, 5.2vw, 72px); line-height: 1.08; letter-spacing: -0.02em; margin: 0; text-wrap: pretty;">{{ t.h1a }}<br /><span style="{{ accentStyle }}">{{ t.h1b }}</span></h1>
+      </div>
+      <div style="padding-bottom: 10px;">
+        <p style="font-size: 15px; line-height: 1.8; color: rgba(255,255,255,0.62); margin: 0 0 16px; max-width: 46ch; text-wrap: pretty;">{{ t.lede }}</p>
+        <p style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11.5px; line-height: 1.9; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin: 0;">{{ t.ledeNote }}</p>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.12);">
+
+      <a href="./desktop.html" style="display: flex; flex-direction: column; gap: 28px; padding: clamp(24px, 3vw, 38px); background: oklch(0.2 0.03 250); transition: background 220ms ease;" style-hover="background: oklch(0.24 0.035 250);">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.2em; color: oklch(0.75 0.13 250);">01</span>
+          <span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.35);">{{ t.meta1 }}</span>
+        </div>
+        <div style="height: 132px; border: 1px solid rgba(255,255,255,0.14); background: linear-gradient(135deg, rgba(255,255,255,0.055) 0 6px, transparent 6px 12px); display: flex; flex-direction: column;">
+          <div style="height: 22px; border-bottom: 1px solid rgba(255,255,255,0.14); display: flex; align-items: center; gap: 6px; padding: 0 10px;">
+            <div style="width: 26px; height: 3px; background: rgba(255,255,255,0.4);"></div>
+            <div style="flex: 1;"></div>
+            <div style="width: 14px; height: 3px; background: rgba(255,255,255,0.2);"></div>
+            <div style="width: 14px; height: 3px; background: rgba(255,255,255,0.2);"></div>
+            <div style="width: 14px; height: 3px; background: rgba(255,255,255,0.2);"></div>
+          </div>
+          <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-end; gap: 7px; padding: 12px;">
+            <div style="width: 68%; height: 8px; background: rgba(255,255,255,0.45);"></div>
+            <div style="width: 44%; height: 8px; background: rgba(255,255,255,0.22);"></div>
+            <div style="width: 22%; height: 8px; background: oklch(0.55 0.16 252);"></div>
+          </div>
+        </div>
+        <div>
+          <h2 style="font-family: Newsreader, 'Almarai', serif; font-weight: 400; font-size: clamp(24px, 2.4vw, 31px); line-height: 1.2; margin: 0 0 12px;">{{ t.card1 }}</h2>
+          <p style="font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.58); margin: 0 0 22px; text-wrap: pretty;">{{ t.card1n }}</p>
+          <span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: oklch(0.97 0.006 90); border-bottom: 1px solid oklch(0.55 0.16 252); padding-bottom: 4px;">{{ t.open }}</span>
+        </div>
+      </a>
+
+      <a href="./mobile.html" style="display: flex; flex-direction: column; gap: 28px; padding: clamp(24px, 3vw, 38px); background: oklch(0.2 0.03 250); transition: background 220ms ease;" style-hover="background: oklch(0.24 0.035 250);">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.2em; color: oklch(0.75 0.13 250);">02</span>
+          <span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.35);">{{ t.meta2 }}</span>
+        </div>
+        <div style="height: 132px; border: 1px solid rgba(255,255,255,0.14); background: linear-gradient(135deg, rgba(255,255,255,0.055) 0 6px, transparent 6px 12px); display: flex; align-items: flex-end; justify-content: center;">
+          <div style="width: 74px; height: 108px; border: 1px solid rgba(255,255,255,0.22); border-bottom: none; border-radius: 10px 10px 0 0; background: oklch(0.22 0.03 250); display: flex; flex-direction: column; gap: 6px; padding: 12px 10px 0;">
+            <div style="width: 26px; height: 3px; background: rgba(255,255,255,0.3); border-radius: 2px; margin: 0 auto 6px;"></div>
+            <div style="width: 100%; height: 34px; background: linear-gradient(135deg, rgba(255,255,255,0.1) 0 5px, transparent 5px 10px); border: 1px solid rgba(255,255,255,0.14);"></div>
+            <div style="width: 80%; height: 5px; background: rgba(255,255,255,0.4);"></div>
+            <div style="width: 55%; height: 5px; background: oklch(0.55 0.16 252);"></div>
+          </div>
+        </div>
+        <div>
+          <h2 style="font-family: Newsreader, 'Almarai', serif; font-weight: 400; font-size: clamp(24px, 2.4vw, 31px); line-height: 1.2; margin: 0 0 12px;">{{ t.card2 }}</h2>
+          <p style="font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.58); margin: 0 0 22px; text-wrap: pretty;">{{ t.card2n }}</p>
+          <span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: oklch(0.97 0.006 90); border-bottom: 1px solid oklch(0.55 0.16 252); padding-bottom: 4px;">{{ t.open }}</span>
+        </div>
+      </a>
+
+      <a href="./timeline.html" style="display: flex; flex-direction: column; gap: 28px; padding: clamp(24px, 3vw, 38px); background: oklch(0.2 0.03 250); transition: background 220ms ease;" style-hover="background: oklch(0.24 0.035 250);">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.2em; color: oklch(0.75 0.13 250);">03</span>
+          <span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.35);">{{ t.meta3 }}</span>
+        </div>
+        <div style="height: 132px; border: 1px solid rgba(255,255,255,0.14); background: linear-gradient(135deg, rgba(255,255,255,0.055) 0 6px, transparent 6px 12px); display: flex; flex-direction: column; justify-content: center; gap: 11px; padding: 0 14px;">
+          <div style="height: 9px; background: rgba(255,255,255,0.4); width: 34%;"></div>
+          <div style="height: 9px; background: oklch(0.55 0.16 252); width: 52%; margin-inline-start: 18%;"></div>
+          <div style="height: 9px; background: rgba(255,255,255,0.28); width: 60%; margin-inline-start: 34%;"></div>
+          <div style="height: 9px; background: rgba(255,255,255,0.18); width: 24%; margin-inline-start: 70%;"></div>
+        </div>
+        <div>
+          <h2 style="font-family: Newsreader, 'Almarai', serif; font-weight: 400; font-size: clamp(24px, 2.4vw, 31px); line-height: 1.2; margin: 0 0 12px;">{{ t.card3 }}</h2>
+          <p style="font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.58); margin: 0 0 22px; text-wrap: pretty;">{{ t.card3n }}</p>
+          <span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: oklch(0.97 0.006 90); border-bottom: 1px solid oklch(0.55 0.16 252); padding-bottom: 4px;">{{ t.open }}</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 40px; padding: 20px clamp(20px, 5vw, 64px); border-top: 1px solid rgba(255,255,255,0.1);">
+    <div style="display: flex; flex-wrap: wrap; gap: 8px 28px;">
+      <sc-for list="{{ t.deliverables }}" as="d" hint-placeholder-count="3">
+        <span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.45);">{{ d }}</span>
+      </sc-for>
+    </div>
+    <span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.3);">{{ t.disclaimer }}</span>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1320,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  renderVals() {
+    const ar = true;
+    const en = {
+      forClient: 'for Special Touch Co.',
+      stamp: 'Prototype v0.1 · Aug 2026',
+      langBtn: 'العربية',
+      eyebrow: 'Preliminary website direction',
+      h1a: 'Twenty years of engineering,',
+      h1b: 'presented properly.',
+      lede: 'A working prototype of the repositioned Special Touch presence — pools, water features and landscape, presented as engineering rather than product.',
+      ledeNote: 'Choose a view to begin',
+      meta1: '1440 × desktop', meta2: '402 × mobile', meta3: '3 deliverables · working days',
+      card1: 'Desktop prototype',
+      card1n: 'Home, projects, engineering and enquiry — the full portfolio-led structure in browser chrome.',
+      card2: 'Mobile prototype',
+      card2n: 'Built for the phone browser: single column, thumb-reach navigation, a quote request that never scrolls away.',
+      card3: 'Delivery timeline',
+      card3n: 'Identity, company profile and website — in working days, with the approval point at each stage.',
+      open: 'Open view →',
+      deliverables: ['Brand identity', 'Company profile', 'Portfolio website'],
+      disclaimer: 'Indicative only — imagery and copy are placeholders',
+    };
+    const arT = {
+      forClient: 'لشركة Special Touch',
+      stamp: 'برتوتايب · النسخة 0.1 · أغسطس 2026',
+      langBtn: 'English',
+      eyebrow: 'التوجّه الأولي للموقع',
+      h1a: 'عشرون عاماً من الهندسة،',
+      h1b: 'مُقدَّمة كما يجب.',
+      lede: 'برتوتايب عملي للحضور الجديد لشركة Special Touch — مسابح ونوافير وتنسيق حدائق، مُقدَّمة كخبرة هندسية لا كمنتج.',
+      ledeNote: 'اختر العرض الذي تريد معاينته',
+      meta1: '1440 · سطح المكتب', meta2: '402 · الهاتف', meta3: '٣ مخرجات · أيام عمل',
+      card1: 'نسخة سطح المكتب',
+      card1n: 'الرئيسية، المشاريع، الهندسة، وطلب عرض السعر — الهيكل الكامل داخل نافذة المتصفح.',
+      card2: 'نسخة الهاتف',
+      card2n: 'مصمّمة لمتصفح الهاتف: عمود واحد، تنقّل في متناول الإبهام، وزر طلب عرض سعر ثابت لا يختفي.',
+      card3: 'الجدول الزمني',
+      card3n: 'الهوية، كتاب الشركة، والموقع — بأيام العمل، ونقطة اعتماد في نهاية كل مرحلة.',
+      open: 'فتح العرض ←',
+      deliverables: ['الهوية البصرية', 'كتاب الشركة', 'موقع البورتفوليو'],
+      disclaimer: 'عرض تمهيدي — الصور والنصوص مؤقتة',
+    };
+    return {
+      t: ar ? arT : en,
+      dir: ar ? 'rtl' : 'ltr',
+      accentStyle: ar ? 'display: block; color: oklch(0.75 0.13 250);' : 'font-style: italic; color: oklch(0.75 0.13 250);',
+    };
+  }
+}
+</script>
+</body>
+</html>

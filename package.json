@@ -1,0 +1,12 @@
+{
+  "name": "special-touch-prototype",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Website prototype for Special Touch Co. — by Tamo Haus",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

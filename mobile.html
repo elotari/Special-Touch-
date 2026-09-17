@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Almarai:wght@300;400;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: oklch(0.16 0.03 250); }
+  a { color: oklch(0.96 0.006 90); text-decoration: none; }
+  a:hover { color: oklch(0.72 0.14 250); }
+  [data-om-starter="ios-frame"] *::-webkit-scrollbar { display: none; }
+  [data-om-starter="ios-frame"] * { scrollbar-width: none; }
+
+  [dir="rtl"] { font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif; }
+  [dir="rtl"] *, [dir="rtl"] { letter-spacing: normal !important; text-transform: none !important; }
+  [dir="rtl"] div, [dir="rtl"] span, [dir="rtl"] p, [dir="rtl"] a, [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3 { font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif !important; }
+  [dir="rtl"] h1 { font-weight: 300 !important; line-height: 1.42 !important; }
+  [dir="rtl"] h2 { font-weight: 300 !important; line-height: 1.46 !important; }
+  [dir="rtl"] h3 { font-weight: 500 !important; line-height: 1.55 !important; }
+  [dir="rtl"] p { font-weight: 400; line-height: 1.95 !important; }
+  [dir="rtl"] [style*="IBM Plex Mono"] { font-weight: 500 !important; }
+  [dir="rtl"] [style*="Newsreader"]:not(h1):not(h2):not(h3) { font-weight: 500 !important; }
+</style>
+</helmet>
+<div dir="{{ shellDir }}" style="min-height: 100vh; background: oklch(0.16 0.03 250); font-family: Archivo, 'IBM Plex Sans Arabic', system-ui, sans-serif; -webkit-font-smoothing: antialiased;">
+
+  <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 24px; padding: 16px clamp(16px, 4vw, 44px); border-bottom: 1px solid rgba(255,255,255,0.12);">
+    <div style="display: flex; align-items: center; gap: 18px;">
+      <a href="./index.html" style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.7);">{{ t.back }}</a>
+      <img src="./assets/tamo-haus-logo-white.png" alt="Tamo Haus" style="height: 24px; width: auto; display: block;" />
+    </div>
+    <div style="display: flex; align-items: center; gap: 18px;">
+      <span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.4);">{{ t.stamp }}</span>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center; gap: clamp(28px, 5vw, 72px); padding: clamp(28px, 5vw, 60px) clamp(16px, 4vw, 44px) 72px;">
+
+    <div style="max-width: 330px; min-width: 250px; display: flex; flex-direction: column; gap: 24px; padding-top: 10px;">
+      <div>
+        <div style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11.5px; letter-spacing: 0.2em; text-transform: uppercase; color: oklch(0.72 0.14 250); margin-bottom: 18px;">{{ t.eyebrow }}</div>
+        <h2 style="font-family: Newsreader, 'Almarai', serif; font-weight: 300; font-size: clamp(26px, 3vw, 34px); line-height: 1.22; color: oklch(0.97 0.006 90); margin: 0 0 14px;">{{ t.title }}</h2>
+        <p style="font-size: 14px; line-height: 1.85; color: rgba(255,255,255,0.55); margin: 0;">{{ t.note }}</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 1px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.12);">
+        <div style="background: oklch(0.18 0.03 250); padding: 16px 18px;">
+          <div style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: oklch(0.8 0.1 250); margin-bottom: 7px;">{{ t.noteDeviceK }}</div>
+          <div style="font-size: 13px; line-height: 1.8; color: rgba(255,255,255,0.58);">{{ t.noteDeviceV }}</div>
+        </div>
+        <div style="background: oklch(0.18 0.03 250); padding: 16px 18px;">
+          <div style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: oklch(0.78 0.13 35); margin-bottom: 7px;">{{ t.noteStyleK }}</div>
+          <div style="font-size: 13px; line-height: 1.8; color: rgba(255,255,255,0.58);">{{ t.noteStyleV }}</div>
+        </div>
+        <div style="background: oklch(0.18 0.03 250); padding: 16px 18px;">
+          <div style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 7px;">{{ t.noteDataK }}</div>
+          <div style="font-size: 13px; line-height: 1.8; color: rgba(255,255,255,0.58);">{{ t.noteDataV }}</div>
+        </div>
+      </div>
+    </div>
+
+    <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" width="{{ 402 }}" height="{{ 874 }}" hint-size="402px,874px">
+      <div dir="{{ siteDir }}" style="height: 100%; position: relative; display: flex; flex-direction: column; background: oklch(0.9 0.008 90);">
+
+        <div dir="ltr" style="flex: none; padding: 54px 12px 9px; background: oklch(0.93 0.006 90); border-bottom: 1px solid oklch(0.82 0.01 250); display: flex; align-items: center; gap: 10px;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: oklch(0.45 0.02 250); width: 26px; text-align: center;">aA</span>
+          <div style="flex: 1; height: 36px; border-radius: 10px; background: oklch(0.98 0.004 90); display: flex; align-items: center; justify-content: center; gap: 7px;">
+            <div style="width: 8px; height: 10px; border: 1px solid oklch(0.5 0.02 250); border-radius: 2px;"></div>
+            <span style="font-size: 13.5px; color: oklch(0.32 0.03 250);">specialtouch-kw.com</span>
+          </div>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; color: oklch(0.45 0.02 250); width: 22px; text-align: center;">⟳</span>
+        </div>
+
+        <div style="flex: 1; overflow-y: auto; background: oklch(0.97 0.006 90); color: oklch(0.24 0.03 250); position: relative;">
+
+          <div style="position: sticky; top: 0; z-index: 3; background: rgba(252,251,249,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid oklch(0.87 0.012 250); height: 62px; padding: 0 16px; display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <img src="./assets/st-mark.png" alt="Special Touch" style="height: 24px; width: auto; display: block;" />
+              <span style="font-family: Newsreader, 'Almarai', serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase;">{{ s.brand }}</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <div onClick="{{ toggleSiteLang }}" style="min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11.5px; letter-spacing: 0.1em; color: oklch(0.45 0.02 250); cursor: pointer;">{{ s.langBtn }}</div>
+              <div onClick="{{ toggleMenu }}" style="min-width: 44px; min-height: 44px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; cursor: pointer;">
+                <div style="width: 22px; height: 1.5px; background: oklch(0.28 0.03 250);"></div>
+                <div style="width: 22px; height: 1.5px; background: oklch(0.28 0.03 250);"></div>
+                <div style="width: 22px; height: 1.5px; background: oklch(0.28 0.03 250);"></div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+              <div>
+                <div style="position: relative; height: 486px; overflow: hidden; background: oklch(0.2 0.03 250);">
+                  <img src="./assets/st/hero-villa-pool-dusk.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
+                  <div style="position: absolute; inset: 0; background: linear-gradient(180deg, oklch(0.16 0.035 250 / 0.35) 0%, oklch(0.16 0.035 250 / 0.88) 62%, oklch(0.16 0.035 250 / 0.96) 100%);"></div>
+                  <div style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 24px 20px 26px;">
+                    <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 16px;">
+                      <div style="width: 18px; height: 3px; background: oklch(0.62 0.2 28);"></div>
+                      <div style="width: 34px; height: 3px; background: oklch(0.62 0.15 250);"></div>
+                      <span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.8);">{{ s.heroEyebrow }}</span>
+                    </div>
+                    <h1 style="font-family: Newsreader, 'Almarai', serif; font-weight: 300; font-size: 38px; line-height: 1.16; letter-spacing: -0.02em; color: oklch(0.99 0.004 90); margin: 0 0 14px;">{{ s.heroA }} <span style="{{ accentLight }}">{{ s.heroB }}</span></h1>
+                    <p style="font-size: 14.5px; line-height: 1.75; color: rgba(255,255,255,0.72); margin: 0 0 20px;">{{ s.heroLede }}</p>
+                    <div style="display: flex; gap: 10px;">
+                      <div onClick="{{ goProjects }}" style="flex: 1; min-height: 50px; display: flex; align-items: center; justify-content: center; background: oklch(0.99 0.004 90); color: oklch(0.2 0.03 250); font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;">{{ s.viewProjects }}</div>
+                      <div onClick="{{ goContact }}" style="flex: 1; min-height: 50px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.45); color: oklch(0.99 0.004 90); font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;">{{ s.siteVisit }}</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; background: oklch(0.2 0.03 250); color: oklch(0.97 0.006 90);">
+                  <sc-for list="{{ s.stats }}" as="st" hint-placeholder-count="4">
+                    <div style="padding: 20px 18px; border-inline-end: 1px solid rgba(255,255,255,0.12); border-bottom: 1px solid rgba(255,255,255,0.12);">
+                      <div style="font-family: Newsreader, 'Almarai', serif; font-size: 27px; line-height: 1;">{{ st.v }}</div>
+                      <div style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-top: 9px; line-height: 1.7;">{{ st.l }}</div>
+                    </div>
+                  </sc-for>
+                </div>
+
+                <div style="padding: 34px 20px 26px;">
+                  <div style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: oklch(0.5 0.15 252); margin-bottom: 14px;">{{ s.aboutEyebrow }}</div>
+                  <h2 style="font-family: Newsreader, 'Almarai', serif; font-weight: 300; font-size: 27px; line-height: 1.3; margin: 0 0 16px;">{{ s.aboutTitle }}</h2>
+                  <p style="font-size: 14.5px; line-height: 1.9; color: oklch(0.42 0.02 250); margin: 0 0 14px;">{{ s.aboutBody1 }}</p>
+                  <p style="font-size: 14.5px; line-height: 1.9; color: oklch(0.42 0.02 250); margin: 0;">{{ s.aboutBody2 }}</p>
+                </div>
+
+                <div style="display: flex; gap: 10px; overflow-x: auto; padding: 0 20px 26px; scroll-snap-type: x mandatory;">
+                  <sc-for list="{{ s.pillars }}" as="pl" hint-placeholder-count="4">
+                    <div style="flex: none; width: 216px; scroll-snap-align: start; border: 1px solid oklch(0.87 0.012 250); padding: 18px 16px;">
+                      <div style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: oklch(0.5 0.15 252); margin-bottom: 10px;">{{ pl.k }}</div>
+                      <div style="font-size: 13px; line-height: 1.75; color: oklch(0.42 0.02 250);">{{ pl.v }}</div>
+                    </div>
+                  </sc-for>
+                </div>
+
+                <div style="padding: 8px 20px 0;">
+                  <div style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: oklch(0.5 0.15 252); margin-bottom: 14px;">{{ s.servEyebrow }}</div>
+                  <h2 style="font-family: Newsreader, 'Almarai', serif; font-weight: 300; font-size: 27px; line-height: 1.3; margin: 0 0 8px;">{{ s.servTitle }}</h2>
+                  <p style="font-size: 13.5px; line-height: 1.8; color: oklch(0.5 0.02 250); margin: 0 0 22px;">{{ s.servLede }}</p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 26px; padding: 0 20px 30px;">
+                  <sc-for list="{{ s.servFeature }}" as="f" hint-placeholder-count="3">
+                    <div>
+                      <div style="height: 200px; overflow: hidden; margin-bottom: 14px;">
+                        <img src="{{ f.img }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+                      </div>
+                      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: oklch(0.5 0.15 252); margin-bottom: 8px;">{{ f.n }}</div>
+                      <h3 style="font-family: Newsreader, 'Almarai', serif; font-weight: 400; font-size: 22px; line-height: 1.3; margin: 0 0 8px;">{{ f.title }}</h3>
+                      <p style="font-size: 13.5px; line-height: 1.8; color: oklch(0.45 0.02 250); margin: 0;">{{ f.note }}</p>
+                    </div>
+                  </sc-for>
+                </div>
+                <div style="display: flex; flex-direction: column; border-top: 1px solid oklch(0.88 0.012 250);">
+                  <sc-for list="{{ s.servRest }}" as="sv" hint-placeholder-count="5">
+                    <div style="display: flex; align-items: center; gap: 14px; min-height: 60px; padding: 12px 20px; border-bottom: 1px solid oklch(0.88 0.012 250);">
+                      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: oklch(0.5 0.15 252);">{{ sv.n }}</span>
+                      <div style="flex: 1;">
+                        <div style="font-size: 14.5px; line-height: 1.4;">{{ sv.title }}</div>
+                        <div style="font-size: 12px; line-height: 1.6; color: oklch(0.52 0.02 250); margin-top: 3px;">{{ sv.note }}</div>
+                      </div>
+                    </div>
+                  </sc-for>
+                </div>
+
+                <div style="padding: 34px 0 30px;">
+                  <div style="padding: 0 20px;">
+                    <div style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: oklch(0.5 0.15 252); margin-bottom: 14px;">{{ s.workEyebrow }}</div>
+                    <h2 style="font-family: Newsreader, 'Almarai', serif; font-weight: 300; font-size: 27px; line-height: 1.3; margin: 0 0 20px;">{{ s.workTitle }}</h2>
+                  </div>
+                  <div style="display: flex; gap: 12px; overflow-x: auto; padding: 0 20px 8px; scroll-snap-type: x mandatory;">
+                    <sc-for list="{{ featured }}" as="p" hint-placeholder-count="4">
+                      <div style="flex: none; width: 268px; scroll-snap-align: start;">
+                        <div style="height: 200px; overflow: hidden; margin-bottom: 13px;">
+                          <img src="{{ p.img }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+                        </div>
+                        <div style="display: flex; justify-content: space-between; gap: 10px; margin-bottom: 7px;">
+                          <span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: oklch(0.5 0.15 252);">{{ p.cat }}</span>
+                          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: oklch(0.55 0.02 250);">{{ p.year }}</span>
+                        </div>
+                        <div style="font-family: Newsreader, 'Almarai', serif; font-size: 19px; line-height: 1.34;">{{ p.title }}</div>
+                      </div>
+                    </sc-for>
+                  </div>
+                  <div style="padding: 18px 20px 0;">
+                    <div onClick="{{ goProjects }}" style="min-height: 52px; display: flex; align-items: center; justify-content: center; border: 1px solid oklch(0.24 0.03 250); font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;">{{ s.allProjects }}</div>
+                  </div>
+                </div>
+
+                <div style="background: oklch(0.2 0.03 250); color: oklch(0.97 0.006 90); padding: 34px 20px 36px;">
+                  <div style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: oklch(0.72 0.14 250); margin-bottom: 14px;">{{ s.engEyebrow }}</div>
+                  <h2 style="font-family: Newsreader, 'Almarai', serif; font-weight: 300; font-size: 27px; line-height: 1.3; margin: 0 0 14px;">{{ s.engTitle }}</h2>
+                  <p style="font-size: 14px; line-height: 1.85; color: rgba(255,255,255,0.65); margin: 0 0 20px;">{{ s.engBody }}</p>
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 22px;">
+                    <img src="./assets/st/plantroom-control-panel.jpg" alt="" style="width: 100%; height: 130px; object-fit: cover; display: block;" />
+                    <img src="./assets/st/maintenance-water-testing.webp" alt="" style="width: 100%; height: 130px; object-fit: cover; display: block;" />
+                  </div>
+                  <div style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 12px;">{{ s.partnersLabel }}</div>
+                  <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px;">
+                    <sc-for list="{{ partners }}" as="b" hint-placeholder-count="7">
+                      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.22); padding: 8px 11px; color: rgba(255,255,255,0.7);">{{ b }}</span>
+                    </sc-for>
+                  </div>
+                  <div onClick="{{ goEngineering }}" style="min-height: 52px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.4); font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;">{{ s.howLink }}</div>
+                </div>
+
+                <div style="position: relative; height: 300px; overflow: hidden;">
+                  <img src="./assets/st/project-villa-pool-01.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
+                  <div style="position: absolute; inset: 0; background: oklch(0.16 0.035 250 / 0.84);"></div>
+                  <div style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: 26px 20px;">
+                    <h2 style="font-family: Newsreader, 'Almarai', serif; font-weight: 300; font-size: 28px; line-height: 1.28; color: oklch(0.99 0.004 90); margin: 0 0 12px;">{{ s.ctaA }} <span style="{{ accentLight }}">{{ s.ctaB }}</span></h2>
+                    <p style="font-size: 13.5px; line-height: 1.8; color: rgba(255,255,255,0.7); margin: 0 0 20px;">{{ s.ctaLede }}</p>
+                    <div onClick="{{ goContact }}" style="min-height: 52px; display: flex; align-items: center; justify-content: center; background: oklch(0.99 0.004 90); color: oklch(0.2 0.03 250); font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;">{{ s.quote }}</div>
+                  </div>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isProjects }}">
+              <div style="padding: 28px 0 0;">
+                <div style="padding: 0 20px;">
+                  <div style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: oklch(0.5 0.15 252); margin-bottom: 14px;">{{ s.navProjects }}</div>
+                  <h1 style="font-family: Newsreader, 'Almarai', serif; font-weight: 300; font-size: 32px; line-height: 1.24; margin: 0 0 12px;">{{ s.projTitle }}</h1>
+                  <p style="font-size: 13.5px; line-height: 1.8; color: oklch(0.48 0.02 250); margin: 0 0 20px;">{{ s.projLede }}</p>
+                </div>
+                <div style="display: flex; gap: 8px; overflow-x: auto; padding: 0 20px 18px; border-bottom: 1px solid oklch(0.87 0.012 250);">
+                  <sc-for list="{{ filters }}" as="f" hint-placeholder-count="6">
+                    <span onClick="{{ f.onClick }}" style="flex: none; min-height: 44px; display: flex; align-items: center; font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 0 16px; border: 1px solid {{ f.border }}; background: {{ f.bg }}; color: {{ f.color }}; cursor: pointer; white-space: nowrap;">{{ f.label }}</span>
+                  </sc-for>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 30px; padding: 24px 20px 10px;">
+                  <sc-for list="{{ visibleProjects }}" as="p" hint-placeholder-count="6">
+                    <div>
+                      <div style="height: 224px; overflow: hidden; margin-bottom: 13px;">
+                        <img src="{{ p.img }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+                      </div>
+                      <div style="display: flex; justify-content: space-between; gap: 12px; margin-bottom: 7px;">
+                        <span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: oklch(0.5 0.15 252);">{{ p.cat }}</span>
+                        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: oklch(0.55 0.02 250);">{{ p.year }}</span>
+                      </div>
+                      <div style="font-family: Newsreader, 'Almarai', serif; font-size: 20px; line-height: 1.34; margin-bottom: 6px;">{{ p.title }}</div>
+                      <p style="font-size: 13px; line-height: 1.75; color: oklch(0.48 0.02 250); margin: 0;">{{ p.meta }}</p>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isEngineering }}">
+              <div style="padding: 28px 0 0;">
+                <div style="padding: 0 20px;">
+                  <div style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: oklch(0.5 0.15 252); margin-bottom: 14px;">{{ s.navEngineering }}</div>
+                  <h1 style="font-family: Newsreader, 'Almarai', serif; font-weight: 300; font-size: 32px; line-height: 1.24; margin: 0 0 12px;">{{ s.engPageTitle }}</h1>
+                  <p style="font-size: 14px; line-height: 1.85; color: oklch(0.45 0.02 250); margin: 0 0 22px;">{{ s.engPageLede }}</p>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr;">
+                  <img src="./assets/st/plantroom-overview.png" alt="" style="width: 100%; height: 150px; object-fit: cover; display: block;" />
+                  <img src="./assets/st/plantroom-control-panel.jpg" alt="" style="width: 100%; height: 150px; object-fit: cover; display: block;" />
+                </div>
+                <div style="display: flex; flex-direction: column; border-top: 1px solid oklch(0.87 0.012 250);">
+                  <sc-for list="{{ s.systems }}" as="sy" hint-placeholder-count="6">
+                    <div style="padding: 20px; border-bottom: 1px solid oklch(0.87 0.012 250);">
+                      <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px;">
+                        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: oklch(0.5 0.15 252);">{{ sy.n }}</span>
+                        <span style="font-family: Newsreader, 'Almarai', serif; font-size: 21px; line-height: 1.3;">{{ sy.title }}</span>
+                      </div>
+                      <p style="font-size: 13.5px; line-height: 1.85; color: oklch(0.48 0.02 250); margin: 0; padding-inline-start: 26px;">{{ sy.note }}</p>
+                    </div>
+                  </sc-for>
+                </div>
+                <div style="padding: 30px 20px 10px;">
+                  <h2 style="font-family: Newsreader, 'Almarai', serif; font-weight: 300; font-size: 25px; line-height: 1.32; margin: 0 0 12px;">{{ s.maintTitle }}</h2>
+                  <p style="font-size: 13.5px; line-height: 1.85; color: oklch(0.46 0.02 250); margin: 0 0 18px;">{{ s.maintBody }}</p>
+                  <div style="display: flex; flex-direction: column; border-top: 1px solid oklch(0.89 0.012 250);">
+                    <sc-for list="{{ s.maintRows }}" as="m" hint-placeholder-count="4">
+                      <div style="display: flex; justify-content: space-between; gap: 16px; padding: 15px 0; border-bottom: 1px solid oklch(0.89 0.012 250); font-size: 13.5px;">
+                        <span>{{ m.k }}</span>
+                        <span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: oklch(0.52 0.02 250); white-space: nowrap;">{{ m.v }}</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isContact }}">
+              <div style="padding: 28px 20px 0;">
+                <div style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: oklch(0.5 0.15 252); margin-bottom: 14px;">{{ s.quote }}</div>
+                <h1 style="font-family: Newsreader, 'Almarai', serif; font-weight: 300; font-size: 32px; line-height: 1.24; margin: 0 0 12px;">{{ s.contactTitle }}</h1>
+                <p style="font-size: 14px; line-height: 1.85; color: oklch(0.45 0.02 250); margin: 0 0 22px;">{{ s.contactLede }}</p>
+                <div style="display: flex; flex-direction: column; gap: 16px;">
+                  <div style="display: flex; flex-direction: column; gap: 8px;"><span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: oklch(0.5 0.02 250);">{{ s.fName }}</span><div style="height: 52px; background: oklch(0.99 0.004 90); border: 1px solid oklch(0.86 0.012 250);"></div></div>
+                  <div style="display: flex; flex-direction: column; gap: 8px;"><span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: oklch(0.5 0.02 250);">{{ s.fPhone }}</span><div style="height: 52px; background: oklch(0.99 0.004 90); border: 1px solid oklch(0.86 0.012 250);"></div></div>
+                  <div style="display: flex; flex-direction: column; gap: 8px;"><span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: oklch(0.5 0.02 250);">{{ s.fType }}</span><div style="height: 52px; background: oklch(0.99 0.004 90); border: 1px solid oklch(0.86 0.012 250); display: flex; align-items: center; justify-content: space-between; padding: 0 14px; font-size: 14px; color: oklch(0.5 0.02 250);"><span>{{ s.fTypeVal }}</span><span>▾</span></div></div>
+                  <div style="display: flex; flex-direction: column; gap: 10px;"><span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: oklch(0.5 0.02 250);">{{ s.fScope }}</span>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                      <sc-for list="{{ s.scopeChips }}" as="c" hint-placeholder-count="6">
+                        <span style="min-height: 44px; display: flex; align-items: center; font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid oklch(0.86 0.012 250); background: oklch(0.99 0.004 90); padding: 0 14px; color: oklch(0.4 0.02 250);">{{ c }}</span>
+                      </sc-for>
+                    </div>
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 8px;"><span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: oklch(0.5 0.02 250);">{{ s.fNotes }}</span><div style="height: 108px; background: oklch(0.99 0.004 90); border: 1px solid oklch(0.86 0.012 250);"></div></div>
+                  <div style="min-height: 54px; display: flex; align-items: center; justify-content: center; background: oklch(0.45 0.15 252); color: oklch(0.99 0.004 90); font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;">{{ s.send }}</div>
+                  <div style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; line-height: 1.8; letter-spacing: 0.08em; text-transform: uppercase; color: oklch(0.55 0.02 250);">{{ s.routed }}</div>
+                  <div style="border-top: 1px solid oklch(0.88 0.012 250); padding-top: 18px; display: flex; flex-direction: column; gap: 14px;">
+                    <sc-for list="{{ s.hours }}" as="h" hint-placeholder-count="2">
+                      <div>
+                        <div style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: oklch(0.58 0.02 250); margin-bottom: 6px;">{{ h.k }}</div>
+                        <div style="font-size: 13.5px; color: oklch(0.34 0.03 250);">{{ h.v }}</div>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+              </div>
+            </sc-if>
+
+            <div style="background: oklch(0.18 0.03 250); color: rgba(255,255,255,0.7); padding: 28px 20px 26px; margin-top: 10px;">
+              <div style="background: oklch(0.99 0.004 90); display: inline-block; padding: 9px 12px; margin-bottom: 14px;">
+                <img src="./assets/st-logo-lockup.png" alt="Special Touch Co." style="height: 26px; width: auto; display: block;" />
+              </div>
+              <p style="font-size: 12.5px; line-height: 1.85; color: rgba(255,255,255,0.45); margin: 0 0 14px;">{{ s.footerBlurb }}</p>
+              <div style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.3);">{{ s.byline }}</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="flex: none; display: flex; gap: 1px; background: oklch(0.2 0.03 250); border-top: 1px solid oklch(0.87 0.012 250);">
+          <div onClick="{{ goContact }}" style="flex: 1; min-height: 56px; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: oklch(0.97 0.006 90); cursor: pointer;">{{ s.quote }}</div>
+          <div style="flex: none; min-width: 138px; min-height: 56px; display: flex; align-items: center; justify-content: center; background: oklch(0.45 0.15 252); color: oklch(0.99 0.004 90); font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;">{{ s.call }}</div>
+        </div>
+
+        <div dir="ltr" style="flex: none; background: oklch(0.93 0.006 90); border-top: 1px solid oklch(0.82 0.01 250); padding: 12px 24px 34px; display: flex; align-items: center; justify-content: space-between; color: oklch(0.42 0.02 250); font-family: 'IBM Plex Mono', monospace; font-size: 17px;">
+          <span>‹</span>
+          <span style="color: oklch(0.72 0.014 250);">›</span>
+          <span style="font-size: 15px;">↑</span>
+          <span style="font-size: 13px;">▢</span>
+          <span style="font-size: 13px;">⧉</span>
+        </div>
+
+        <sc-if value="{{ menuOpen }}">
+          <div style="position: absolute; top: 100px; left: 0; right: 0; bottom: 0; z-index: 20; background: oklch(0.2 0.03 250); display: flex; flex-direction: column;">
+            <div onClick="{{ toggleMenu }}" style="min-height: 62px; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; border-bottom: 1px solid rgba(255,255,255,0.14); cursor: pointer;">
+              <span style="font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.5);">{{ s.menu }}</span>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; color: oklch(0.97 0.006 90);">✕</span>
+            </div>
+            <sc-for list="{{ menu }}" as="m" hint-placeholder-count="4">
+              <div onClick="{{ m.onClick }}" style="min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 20px; border-bottom: 1px solid rgba(255,255,255,0.12); cursor: pointer;">
+                <span style="font-family: Newsreader, 'Almarai', serif; font-size: 23px; color: {{ m.color }};">{{ m.label }}</span>
+                <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: {{ m.mark }};">{{ m.n }}</span>
+              </div>
+            </sc-for>
+            <div style="padding: 22px 20px;">
+              <div onClick="{{ goContact }}" style="min-height: 54px; display: flex; align-items: center; justify-content: center; background: oklch(0.45 0.15 252); color: oklch(0.99 0.004 90); font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;">{{ s.quote }}</div>
+              <div onClick="{{ toggleSiteLang }}" style="margin-top: 16px; font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.4); cursor: pointer;">{{ s.langSwitch }}</div>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </x-import>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1100,&quot;height&quot;:1060}}">
+class Component extends DCLogic {
+  state = { screen: 'home', filter: 0, menuOpen: false, shellLang: 'en', siteLang: 'en' };
+
+  renderVals() {
+    const shellAr = true;
+    const ar = this.state.siteLang === 'ar';
+    const scr = this.state.screen;
+    const go = (k) => () => this.setState({ screen: k, menuOpen: false });
+    const A = './assets/st/';
+
+    const shellEn = {
+      back: '← All views', stamp: 'Mobile web · Special Touch Co.', langBtn: 'العربية',
+      eyebrow: 'Mobile web view',
+      title: 'Built for the phone browser, not shrunk to fit it.',
+      note: 'Most enquiries arrive on a phone: one column, photographs first, and a call button fixed above the browser bar.',
+      noteDeviceK: 'Phone view only',
+      noteDeviceV: 'This is the layout as it appears in a phone browser. The desktop layout is a separate view.',
+      noteStyleK: 'Style is open to change',
+      noteStyleV: 'Colours, typography, imagery and layout are a starting direction, not a decision — all adjustable to your preference.',
+      noteDataK: 'Placeholder content',
+      noteDataV: 'Project names, years and specifications are indicative only, written to show the structure.',
+    };
+    const shellArT = {
+      back: 'كل العروض ←', stamp: 'نسخة الهاتف · Special Touch', langBtn: 'English',
+      eyebrow: 'نسخة متصفح الهاتف',
+      title: 'مبنية لمتصفح الهاتف، لا مصغَّرة لتناسبه.',
+      note: 'معظم الاستفسارات تصل من الهاتف: عمود واحد، الصور أولاً، وزر اتصال ثابت فوق شريط المتصفح.',
+      noteDeviceK: 'نسخة الهاتف فقط',
+      noteDeviceV: 'هذا هو الشكل كما يظهر داخل متصفح الهاتف. أما شكل سطح المكتب فهو عرض منفصل.',
+      noteStyleK: 'الستايل قابل للتغيير',
+      noteStyleV: 'الألوان والخطوط والصور والتوزيع اتجاه مبدئي لا قرار نهائي — وكلها قابلة للتعديل حسب رغبتكم.',
+      noteDataK: 'محتوى مؤقت',
+      noteDataV: 'أسماء المشاريع والسنوات والمواصفات تقريبية، كُتبت لإظهار الهيكل فقط.',
+    };
+
+    const projEn = [
+      { title: 'Infinity-edge pool, beachfront villa', cat: 'Residential', year: '2025', meta: 'Infinity edge with balance tank, glass mosaic interior, recessed deck lighting and planted terraces.', img: A + 'hero-villa-pool-dusk.jpg' },
+      { title: 'Rooftop pool & spa, private villa', cat: 'Residential', year: '2024', meta: 'Rooftop pool with adjoining spa, stone coping and an overflow edge facing the skyline.', img: A + 'project-villa-pool-01.jpg' },
+      { title: 'Courtyard pool, family villa', cat: 'Residential', year: '2023', meta: 'Turquoise mosaic pool with pergola-shaded deck, wide entry steps and automated dosing.', img: A + 'project-villa-pool-02.jpg' },
+      { title: 'Side-garden pool, townhouse', cat: 'Residential', year: '2022', meta: 'Compact pool in a narrow plot — composite deck, glass balustrade and a single-pump plant.', img: A + 'project-villa-pool-03.jpg' },
+      { title: 'Stone courtyard pool, modern villa', cat: 'Residential', year: '2024', meta: 'Flush deck, stone-clad surround and planted borders, with the plant room built into the boundary wall.', img: A + 'landscape-pool-garden-day.jpg' },
+      { title: 'Resort leisure pool, coastal development', cat: 'Hotels & resorts', year: '2023', meta: 'Free-form leisure pool, separate kids pool, shaded terraces and full landscape package.', img: A + 'project-hotel-resort-pool.webp' },
+      { title: 'Indoor lap pool, health club', cat: 'Health clubs', year: '2022', meta: 'Four-lane indoor pool with UV sanitisation and dehumidification coordinated with the gym fit-out.', img: A + 'project-healthclub-lap-pool.avif' },
+      { title: 'Plaza jet fountain, commercial frontage', cat: 'Water features', year: '2024', meta: 'Programmed nozzle array with level control, wind sensor and night lighting.', img: A + 'project-water-feature-fountain.jpg' },
+      { title: 'Garden jacuzzi under pergola, private villa', cat: 'Jacuzzi & spa', year: '2025', meta: 'Eight-seat jacuzzi with blower, LED circuit and a dedicated plant enclosure.', img: A + 'project-jacuzzi-spa.png' },
+    ];
+    const projAr = [
+      { title: 'مسبح بحافة لا نهائية، فيلا على الواجهة البحرية', cat: 'سكني', year: '٢٠٢٥', meta: 'حافة لا نهائية مع خزان توازن، موزاييك زجاجي، إضاءة مخفية في التراس، ومصاطب مزروعة.', img: A + 'hero-villa-pool-dusk.jpg' },
+      { title: 'مسبح وجاكوزي على السطح، فيلا خاصة', cat: 'سكني', year: '٢٠٢٤', meta: 'مسبح على السطح مع جاكوزي ملاصق، حافة حجرية، وحافة فائضة تطلّ على أفق المدينة.', img: A + 'project-villa-pool-01.jpg' },
+      { title: 'مسبح فناء، فيلا عائلية', cat: 'سكني', year: '٢٠٢٣', meta: 'مسبح بموزاييك فيروزي، تراس مظلّل بمظلة خشبية، درجات دخول واسعة، وجرعات كيميائية آلية.', img: A + 'project-villa-pool-02.jpg' },
+      { title: 'مسبح حديقة جانبية، تاون هاوس', cat: 'سكني', year: '٢٠٢٢', meta: 'مسبح صغير في قسيمة ضيّقة — أرضية كومبوزيت، درابزين زجاجي، ومنظومة بمضخّة واحدة.', img: A + 'project-villa-pool-03.jpg' },
+      { title: 'مسبح فناء حجري، فيلا حديثة', cat: 'سكني', year: '٢٠٢٤', meta: 'تراس بمستوى الأرض، إحاطة حجرية، وأحواض زراعة، مع غرفة معدّات مدمجة في سور القسيمة.', img: A + 'landscape-pool-garden-day.jpg' },
+      { title: 'مسبح ترفيهي لمنتجع ساحلي', cat: 'فنادق ومنتجعات', year: '٢٠٢٣', meta: 'مسبح ترفيهي حرّ الشكل، مسبح أطفال منفصل، مصاطب مظلّلة، وحزمة تنسيق حدائق كاملة.', img: A + 'project-hotel-resort-pool.webp' },
+      { title: 'مسبح سباحة داخلي، نادٍ صحي', cat: 'أندية صحية', year: '٢٠٢٢', meta: 'مسبح داخلي بأربعة مسارات، تعقيم بالأشعة فوق البنفسجية، وتنسيق منظومة تجفيف الهواء مع تجهيز النادي.', img: A + 'project-healthclub-lap-pool.avif' },
+      { title: 'نافورة نفّاثة لساحة تجارية', cat: 'مظاهر مائية', year: '٢٠٢٤', meta: 'مجموعة نفاثات مبرمجة مع تحكّم بالمنسوب، حسّاس رياح، وإضاءة ليلية.', img: A + 'project-water-feature-fountain.jpg' },
+      { title: 'جاكوزي حديقة تحت مظلة، فيلا خاصة', cat: 'جاكوزي وسبا', year: '٢٠٢٥', meta: 'جاكوزي بثمانية مقاعد مع نافخ هواء، دائرة إضاءة LED، وغرفة معدّات مستقلة.', img: A + 'project-jacuzzi-spa.png' },
+    ];
+    const catsEn = ['All', 'Residential', 'Hotels & resorts', 'Health clubs', 'Water features', 'Jacuzzi & spa'];
+    const catsAr = ['الكل', 'سكني', 'فنادق ومنتجعات', 'أندية صحية', 'مظاهر مائية', 'جاكوزي وسبا'];
+
+    const en = {
+      brand: 'Special Touch', langBtn: 'AR', langSwitch: 'العربية', menu: 'Menu', call: 'Call now',
+      navHome: 'Home', navProjects: 'Projects', navEngineering: 'Engineering', navContact: 'Contact',
+      quote: 'Request a quote', viewProjects: 'Our projects', siteVisit: 'Site visit',
+      heroEyebrow: 'Pools · water features · landscape',
+      heroA: 'Twenty years of pools that', heroB: 'still run quietly.',
+      heroLede: 'Designed, built and maintained in Kuwait since 2005 — by our own engineers, not a chain of subcontractors.',
+      stats: [
+        { v: '2005', l: 'Working in Kuwait since' },
+        { v: '08', l: 'Service lines, one contract' },
+        { v: '07', l: 'Equipment brands' },
+        { v: '100%', l: 'In-house delivery' },
+      ],
+      aboutEyebrow: '01 — Who we are',
+      aboutTitle: 'One contractor for the pool, the plant room and the garden around it.',
+      aboutBody1: 'Special Touch was founded in 2005 to do the whole job: the pool shell, the hydraulics behind it, the water feature beside it and the landscape that frames it.',
+      aboutBody2: 'Most of our work comes from clients who saw a pool we finished years ago and asked who built it. That is the standard we hold.',
+      pillars: [
+        { k: 'In-house engineering', v: 'Engineers, supervisors and technicians on our own payroll.' },
+        { k: 'Built for the climate', v: 'Equipment chosen for Kuwaiti heat, dust and water hardness.' },
+        { k: 'One accountable contract', v: 'Pool, features, lighting and landscape in one scope.' },
+        { k: 'Life after handover', v: 'Service contracts and spare parts, for any pool.' },
+      ],
+      servEyebrow: '02 — What we do',
+      servTitle: 'Eight service lines, one team.',
+      servLede: 'Commissioned together or one at a time — including the plant room and the controls.',
+      servFeature: [
+        { n: '01', title: 'Swimming pools', note: 'Residential, hotel, resort and training pools — from excavation and shell to tiling, coping and first fill.', img: A + 'project-villa-pool-02.jpg' },
+        { n: '02', title: 'Water features & fountains', note: 'Reflecting canals, sheer descent walls and jet fountains with their own recirculating plant.', img: A + 'project-water-feature-fountain.jpg' },
+        { n: '03', title: 'Jacuzzi, spa, sauna & steam', note: 'Hydrotherapy jets, blowers, sauna cabins and steam rooms, mechanically coordinated end to end.', img: A + 'project-jacuzzi-spa.png' },
+      ],
+      servRest: [
+        { n: '04', title: 'Underwater lighting', note: 'LED fittings, colour scenes, halogen retrofits.' },
+        { n: '05', title: 'Hard landscape', note: 'Decks, stone, anti-slip composite, shade structures.' },
+        { n: '06', title: 'Soft landscape', note: 'Planting, turf and irrigation around the pool.' },
+        { n: '07', title: 'Exterior furniture', note: 'Pool beds, seating, tables, umbrellas.' },
+        { n: '08', title: 'Maintenance', note: 'Scheduled service, water balancing, repairs.' },
+      ],
+      workEyebrow: '03 — Selected work', workTitle: 'Projects we are happy to be judged on.', allProjects: 'All projects',
+      engEyebrow: '04 — The engineering',
+      engTitle: 'A pool is a water treatment system with a nice finish on top.',
+      engBody: 'Whether the water stays clear and the pump stays quiet is decided in the plant room: turnover, pipe sizing, filtration, dosing and control.',
+      partnersLabel: 'Equipment we specify and stock',
+      howLink: 'How a pool works',
+      ctaA: 'Send us the site.', ctaB: 'We will tell you what it takes.',
+      ctaLede: 'Location, intended use and any drawings you hold are enough for a scope and a realistic figure.',
+      projTitle: 'Delivered work, sector by sector',
+      projLede: 'Villas, health clubs, water features and spa projects across Kuwait.',
+      engPageTitle: 'What sits behind the surface',
+      engPageLede: 'Water is pulled from the pool, filtered, treated, tempered and returned — continuously. Getting that cycle right for a specific pool is the engineering.',
+      systems: [
+        { n: '01', title: 'Circulation & pumps', note: 'Flow and turnover calculated from pool volume and expected bathing load.' },
+        { n: '02', title: 'Filtration', note: 'Sand, cartridge or multi-media banks with proper backwash and service access.' },
+        { n: '03', title: 'Sanitising & purification', note: 'Chlorination, salt, UV or ozone — chosen for how the pool is used.' },
+        { n: '04', title: 'Heating & temperature', note: 'Heat pumps, exchangers and covers so the pool is usable in December too.' },
+        { n: '05', title: 'Drains, inlets & safety', note: 'Hydraulic balance, surface skimming, anti-entrapment on every suction point.' },
+        { n: '06', title: 'Pipework & controls', note: 'Pressure-tested UPVC, labelled valves, a panel an operator can read.' },
+      ],
+      maintTitle: 'Maintenance is part of the specification.',
+      maintBody: 'Scheduled service keeps the chemistry balanced, protects pumps and heaters, and catches leaks while they are still cheap. We maintain pools we built and pools we did not.',
+      maintRows: [
+        { k: 'Water chemistry test & correction', v: 'Weekly' },
+        { k: 'Filter backwash & basket clean', v: 'Monthly' },
+        { k: 'Pump, heater & control inspection', v: 'Quarterly' },
+        { k: 'Surface, grout & lighting report', v: 'Annual' },
+      ],
+      contactTitle: 'Start with the site.',
+      contactLede: 'Tell us where the pool is going and how it will be used. An engineer reviews the enquiry before anyone quotes a price.',
+      fName: 'Full name', fPhone: 'Telephone', fType: 'Project type', fTypeVal: 'Villa pool — new build',
+      fScope: 'Scope required', fNotes: 'About the site',
+      scopeChips: ['New pool', 'Water feature', 'Jacuzzi / spa', 'Landscape', 'Lighting', 'Service'],
+      send: 'Send enquiry', routed: 'Goes to the engineering team & WhatsApp',
+      hours: [{ k: 'Enquiries', v: 'Sunday – Thursday, 8:00 – 17:00' }, { k: 'Service calls', v: 'Saturday included, by appointment' }],
+      footerBlurb: 'Swimming pools, water features and landscape. Kuwait, since 2005.',
+      byline: '© 2026 · Prototype by Tamo Haus',
+    };
+
+    const arS = {
+      brand: 'سبيشال تَتش', langBtn: 'EN', langSwitch: 'English', menu: 'القائمة', call: 'اتصل الآن',
+      navHome: 'الرئيسية', navProjects: 'المشاريع', navEngineering: 'الهندسة', navContact: 'تواصل معنا',
+      quote: 'اطلب عرض سعر', viewProjects: 'أعمالنا', siteVisit: 'زيارة موقع',
+      heroEyebrow: 'مسابح · مظاهر مائية · تنسيق حدائق',
+      heroA: 'عشرون عاماً من مسابح', heroB: 'ما زالت تعمل بهدوء.',
+      heroLede: 'تصميم وتنفيذ وصيانة في الكويت منذ عام ٢٠٠٥، بمهندسينا وفنّيينا، لا عن طريق مقاولين فرعيين.',
+      stats: [
+        { v: '٢٠٠٥', l: 'نعمل في الكويت منذ' },
+        { v: '٨', l: 'خطوط خدمة بعقد واحد' },
+        { v: '٧', l: 'علامات معدّات' },
+        { v: '١٠٠٪', l: 'تنفيذ بفريقنا' },
+      ],
+      aboutEyebrow: '١ — من نحن',
+      aboutTitle: 'مقاول واحد للمسبح وغرفة المعدّات والحديقة من حوله.',
+      aboutBody1: 'تأسّست سبيشال تَتش عام ٢٠٠٥ لتنفّذ العمل كاملاً: هيكل المسبح، والمنظومة الهيدروليكية خلفه، والمظهر المائي بجانبه، والتنسيق الذي يحيط به.',
+      aboutBody2: 'تأتينا معظم مشاريعنا عن طريق عملاء شاهدوا مسبحاً أنجزناه قبل سنوات فسألوا عن منفّذه. وهذا هو المعيار الذي نقيس عليه عملنا.',
+      pillars: [
+        { k: 'هندسة داخلية', v: 'مهندسون ومشرفون وفنيون على كوادرنا.' },
+        { k: 'مواصفات تناسب المناخ', v: 'معدّات مختارة لحرارة الكويت والغبار وقساوة المياه.' },
+        { k: 'عقد واحد بمسؤولية واحدة', v: 'المسبح والمظاهر والإضاءة والتنسيق في نطاق واحد.' },
+        { k: 'ما بعد التسليم', v: 'عقود صيانة وقطع غيار، لأي مسبح.' },
+      ],
+      servEyebrow: '٢ — خدماتنا',
+      servTitle: 'ثماني خدمات بفريق واحد.',
+      servLede: 'يمكن طلبها مجتمعة أو كل خدمة على حدة، وتشمل غرفة المعدّات ولوحات التحكّم.',
+      servFeature: [
+        { n: '١', title: 'المسابح', note: 'مسابح سكنية وفندقية ومنتجعات وتدريب — من الحفر والهيكل حتى السيراميك والحافة وأول تعبئة.', img: A + 'project-villa-pool-02.jpg' },
+        { n: '٢', title: 'النوافير والمظاهر المائية', note: 'قنوات عاكسة وجدران انسدال ونوافير نفّاثة، مع منظومة تدوير خاصة بها.', img: A + 'project-water-feature-fountain.jpg' },
+        { n: '٣', title: 'الجاكوزي والسبا والساونا والبخار', note: 'نفاثات علاجية ونافخات هواء وكبائن ساونا وغرف بخار، بتنسيق ميكانيكي كامل.', img: A + 'project-jacuzzi-spa.png' },
+      ],
+      servRest: [
+        { n: '٤', title: 'الإضاءة الغاطسة', note: 'وحدات LED ومشاهد ملوّنة واستبدال الهالوجين.' },
+        { n: '٥', title: 'التنسيق الصلب', note: 'تراسات وأحجار وكومبوزيت مانع للانزلاق ومظلات.' },
+        { n: '٦', title: 'التنسيق اللين', note: 'زراعة ومسطحات خضراء وشبكات ريّ حول المسبح.' },
+        { n: '٧', title: 'الأثاث الخارجي', note: 'أسرّة مسابح وجلسات وطاولات ومظلات.' },
+        { n: '٨', title: 'الصيانة', note: 'خدمة مجدولة ومعايرة مياه وإصلاحات.' },
+      ],
+      workEyebrow: '٣ — أعمال مختارة', workTitle: 'مشاريع نرحّب بأن يُقاس عملنا عليها.', allProjects: 'كل المشاريع',
+      engEyebrow: '٤ — الجانب الهندسي',
+      engTitle: 'المسبح في حقيقته منظومة معالجة مياه، والتشطيب هو ما يظهر منها فقط.',
+      engBody: 'ما يحدّد بقاء المياه صافية والمضخّة هادئة هو ما في غرفة المعدّات: دورة التدوير، وأقطار الأنابيب، ومساحة الفلترة، ونظام الجرعات، ولوحة التحكّم.',
+      partnersLabel: 'معدّات نعتمدها ونوفّر قطعها',
+      howLink: 'كيف يعمل المسبح',
+      ctaA: 'أرسل لنا الموقع،', ctaB: 'ونخبرك بما يحتاجه.',
+      ctaLede: 'يكفي أن ترسل الموقع وطبيعة الاستخدام وما لديك من مخططات، لنعود إليك بنطاق عمل وتقدير سعر واقعي.',
+      projTitle: 'أعمال منفّذة، قطاعاً بعد قطاع',
+      projLede: 'فلل وأندية صحية ومظاهر مائية ومشاريع سبا في الكويت.',
+      engPageTitle: 'ما يقف خلف السطح',
+      engPageLede: 'تُسحب المياه من المسبح، فتُفلتَر وتُعالَج وتُضبَط حرارتها ثم تعود إليه، في دورة لا تتوقّف. وضبط هذه الدورة على مسبح بعينه — بحجمه وعدد مستخدميه ومناخه — هو جوهر العمل الهندسي.',
+      systems: [
+        { n: '١', title: 'التدوير والمضخّات', note: 'يُحسب التصريف ودورة التدوير من حجم المسبح وعدد المستخدمين المتوقّع.' },
+        { n: '٢', title: 'الفلترة', note: 'فلاتر رملية أو كرتونية أو بنوك وسائط، بغسيل عكسي سليم ومساحة للصيانة.' },
+        { n: '٣', title: 'التعقيم والتنقية', note: 'كلور أو ملح أو أشعة فوق بنفسجية أو أوزون، بحسب استخدام المسبح.' },
+        { n: '٤', title: 'التسخين وحرارة المياه', note: 'مضخّات حرارية ومبادلات وأغطية، ليبقى المسبح صالحاً في ديسمبر أيضاً.' },
+        { n: '٥', title: 'المصارف والمآخذ والسلامة', note: 'توازن هيدروليكي وكشط للسطح وتفاصيل مانعة للاحتجاز على كل نقطة شفط.' },
+        { n: '٦', title: 'التمديدات ولوحات التحكّم', note: 'أنابيب UPVC مختبرة بالضغط، محابس مرقّمة، ولوحة يفهمها المشغّل.' },
+      ],
+      maintTitle: 'الصيانة جزء من المواصفة.',
+      maintBody: 'الصيانة الدورية تحفظ توازن المياه، وتحمي المضخّات والسخانات، وتكشف التسريبات قبل أن تتحوّل إلى إصلاح مكلف. ونتولّى صيانة مسابح نفّذناها ومسابح نفّذها غيرنا.',
+      maintRows: [
+        { k: 'فحص كيمياء المياه وتصحيحها', v: 'أسبوعياً' },
+        { k: 'غسيل الفلتر وتنظيف المصافي', v: 'شهرياً' },
+        { k: 'فحص المضخّات والسخانات والتحكّم', v: 'ربع سنوي' },
+        { k: 'تقرير الأسطح والمفاصل والإضاءة', v: 'سنوياً' },
+      ],
+      contactTitle: 'ابدأ من الموقع.',
+      contactLede: 'أخبرنا بموقع المسبح وطبيعة استخدامه. يراجع الطلبَ مهندس من فريقنا قبل إصدار أي سعر.',
+      fName: 'الاسم الكامل', fPhone: 'رقم الهاتف', fType: 'نوع المشروع', fTypeVal: 'مسبح فيلا — تنفيذ جديد',
+      fScope: 'نطاق العمل المطلوب', fNotes: 'عن الموقع',
+      scopeChips: ['مسبح جديد', 'مظهر مائي', 'جاكوزي / سبا', 'تنسيق حدائق', 'إضاءة', 'صيانة'],
+      send: 'إرسال الطلب', routed: 'يصل إلى الفريق الهندسي وواتساب',
+      hours: [{ k: 'الاستفسارات', v: 'الأحد – الخميس، ٨:٠٠ – ١٧:٠٠' }, { k: 'طلبات الصيانة', v: 'السبت أيضاً، بموعد مسبق' }],
+      footerBlurb: 'مسابح ومظاهر مائية وتنسيق حدائق. الكويت، منذ ٢٠٠٥.',
+      byline: '© ٢٠٢٦ · برتوتايب من إعداد Tamo Haus',
+    };
+
+    const s = ar ? arS : en;
+    const projects = ar ? projAr : projEn;
+    const cats = ar ? catsAr : catsEn;
+    const fi = this.state.filter;
+    const nav = [
+      { n: '01', key: 'home', label: s.navHome },
+      { n: '02', key: 'projects', label: s.navProjects },
+      { n: '03', key: 'engineering', label: s.navEngineering },
+      { n: '04', key: 'contact', label: s.navContact },
+    ];
+    const shellNav = shellAr
+      ? ['الرئيسية', 'المشاريع', 'الهندسة', 'طلب عرض سعر']
+      : ['Home', 'Projects', 'Engineering', 'Quote request'];
+
+    return {
+      t: shellAr ? shellArT : shellEn,
+      shellDir: shellAr ? 'rtl' : 'ltr',
+      siteDir: ar ? 'rtl' : 'ltr',
+      toggleSiteLang: () => this.setState({ siteLang: ar ? 'en' : 'ar', menuOpen: false }),
+      accentLight: ar ? 'display: block; color: oklch(0.8 0.1 250);' : 'font-style: italic; color: oklch(0.82 0.09 250);',
+      s: s,
+      screens: nav.map((x, i) => ({
+        n: x.n, label: shellNav[i], onClick: go(x.key),
+        bg: scr === x.key ? 'oklch(0.24 0.035 250)' : 'oklch(0.2 0.03 250)',
+        color: scr === x.key ? 'oklch(0.97 0.006 90)' : 'rgba(255,255,255,0.5)',
+      })),
+      menu: nav.map((x) => ({
+        n: x.n, label: x.label, onClick: go(x.key),
+        color: scr === x.key ? 'oklch(0.75 0.13 250)' : 'oklch(0.97 0.006 90)',
+        mark: scr === x.key ? 'oklch(0.75 0.13 250)' : 'rgba(255,255,255,0.35)',
+      })),
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState({ menuOpen: !this.state.menuOpen }),
+      goContact: go('contact'), goProjects: go('projects'), goEngineering: go('engineering'),
+      isHome: scr === 'home', isProjects: scr === 'projects', isEngineering: scr === 'engineering', isContact: scr === 'contact',
+      featured: projects.slice(0, 4),
+      partners: ['Hayward', 'Astral Pool', 'Pentair', 'Pahlen', 'Blue Lagoon', 'Prozone', 'Elecro'],
+      filters: cats.map((c, i) => ({
+        label: c,
+        onClick: () => this.setState({ filter: i }),
+        bg: fi === i ? 'oklch(0.24 0.03 250)' : 'transparent',
+        color: fi === i ? 'oklch(0.97 0.006 90)' : 'oklch(0.4 0.02 250)',
+        border: fi === i ? 'oklch(0.24 0.03 250)' : 'oklch(0.86 0.012 250)',
+      })),
+      visibleProjects: fi === 0 ? projects : projects.filter((p) => p.cat === cats[fi]),
+    };
+  }
+}
+</script>
+</body>
+</html>
